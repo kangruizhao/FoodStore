@@ -46,7 +46,7 @@ export class AdminHomeComponent {
                 this.allorders = allorders
 
 
-                }
+              },
 
               error => { }
         );

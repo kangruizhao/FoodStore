@@ -43,7 +43,7 @@ export class MyOrderComponent implements OnInit {
                   this.orders = orders
 
 
-                  }
+                },
 
                 error => { }
           );

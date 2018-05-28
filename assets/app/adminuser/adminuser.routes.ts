@@ -1,4 +1,4 @@
-import { Routes } from "@angular/router";
+import { Routes,RouterModule } from "@angular/router";
 import {AdminSigninComponent} from"./adminsignin.component";
 import {AdminSignupComponent} from"./adminsignup.component";
 //import {AddComponent} from"./add.component";
@@ -9,3 +9,4 @@ export const ADMINUSER_ROUTES: Routes = [
     { path: 'signup', component: AdminSignupComponent }
 
 ];
+export const adminuserRouting = RouterModule.forChild(ADMINUSER_ROUTES);

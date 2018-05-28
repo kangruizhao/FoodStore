@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import{MainPageService} from"./mainpage.service";
@@ -12,7 +12,7 @@ import { Router } from "@angular/router";
   export class MainSignInComponent implements OnInit{
         myForm:FormGroup;
         display = 'none';
-        error=Error;
+        error:Error;
     //constructor(private authService: AuthService) {}
     constructor(private mainPageService: MainPageService,private router: Router) {}
     onSubmit() {
@@ -40,7 +40,7 @@ import { Router } from "@angular/router";
                     );
                     this.router.navigateByUrl('/');
                 }
-              }
+              },
                 error => {
                 this.error= new Error(error.title, error.error.message);
                 this.display='block';

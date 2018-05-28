@@ -31,11 +31,9 @@ export class AdminFoodItemComponent {
    onDelete() {
         this.adminService.deleteFood(this.food)
         .subscribe(
-               result => console.log(result);
+               result => console.log(result)
 
-             }
+
          );
+       }
     }
-
-
-}

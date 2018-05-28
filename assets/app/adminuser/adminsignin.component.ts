@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { AdminUserService } from "./adminuser.service";
@@ -12,7 +12,7 @@ import { Router } from "@angular/router";
   export class AdminSigninComponent implements OnInit{
         myForm:FormGroup;
         display = 'none';
-        error=Error;
+        error:Error;
     //constructor(private authService: AuthService) {}
     constructor(private adminUserService: AdminUserService,private router: Router) {}
     onSubmit() {
@@ -28,7 +28,7 @@ import { Router } from "@angular/router";
                 if(data.message==="Successfully logged in"){
                   this.router.navigateByUrl('/admin');
                 }
-              }
+              },
                 error => {
                 this.error= new Error(error.title, error.error.message);
                 this.display='block';

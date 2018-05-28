@@ -57,8 +57,8 @@ export class MainCartComponent implements OnInit {
 
 
                      }
-                    console.log(this.total);
-                 }
+
+                 },
                    error => { }
              );
        }
@@ -114,12 +114,12 @@ export class MainCartComponent implements OnInit {
           console.log(order.foodids);
           this.mainpageService.makeanorder(order)
               .subscribe(
-                    data=>console.log(data)
+                    data=>console.log(data),
                     error => console.log(error)
-                    this.foods=[];
-                    this.total=0.00;
-              );
 
+              );
+              this.foods=[];
+              this.total=0.00;
 
         }
         else{

@@ -26,9 +26,12 @@ export class MainFoodItemComponent {
  addtoCart() {
     if((localStorage.getItem('userId') !== null)&&(localStorage.getItem('token') !== null)){
         this.mainpageService.addtoCartGlobal(this.food).subscribe(
-            result=>console.log(result);
-            error => { };
-      alert("Your put the "+this.food.name+" in to your cart");
+            result=>{console.log(result);
+            alert("Your put the "+this.food.name+" in to your cart");
+          },
+            error => { }
+      )
+
     }
     else{
         this.mainpageService.addtoCartLocal(this.food);

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { AdminUserService } from "./adminuser.service";
@@ -12,7 +12,7 @@ import { Router } from "@angular/router";
   export class AdminSignupComponent implements OnInit{
         myForm:FormGroup;
         display = 'none';
-        error=Error;
+        error:Error;
     //constructor(private authService: AuthService) {}
 
   //  isLoggedIn() {

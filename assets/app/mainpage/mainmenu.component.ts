@@ -20,7 +20,7 @@ export class MainMenuComponent implements OnInit {
             .subscribe(
                 (foods: Food[]) => {
                     this.foods = foods;
-                }
+                },
                 error => { }
             );
     }

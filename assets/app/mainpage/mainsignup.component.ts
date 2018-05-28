@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import{MainPageService} from"./mainpage.service";
@@ -12,7 +12,7 @@ import { Router } from "@angular/router";
   export class MainSignUpComponent implements OnInit{
         myForm:FormGroup;
         display = 'none';
-        error=Error;
+        error:Error;
     //constructor(private authService: AuthService) {}
 
   //  isLoggedIn() {
@@ -23,7 +23,7 @@ import { Router } from "@angular/router";
       const user = new User(
           this.myForm.value.phone,
           this.myForm.value.password,
-          this.myForm.value.name
+          this.myForm.value.name,
           "id",
           this.myForm.value.cpassword
 
