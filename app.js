@@ -14,7 +14,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-mongoose.connect('mongodb://localhost:27017/order');
+mongoose.connect('mongodb://test_user:19930625@ds137720.mlab.com:37720/restaurantkangrui');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
