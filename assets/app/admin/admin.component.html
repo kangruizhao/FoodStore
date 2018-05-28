@@ -1,0 +1,15 @@
+<nav class="navbar navbar-inverse bg-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <span class="navbar-brand" >Manage restaurant</span>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li routerLinkActive="active"><a [routerLink]="['home']">Home</a></li>
+              <li routerLinkActive="active"><a [routerLink]="['add']">Add new food to menu</a></li>
+              <li routerLinkActive="active"><a [routerLink]="['menu']">menu of our restaurant</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+<router-outlet></router-outlet>

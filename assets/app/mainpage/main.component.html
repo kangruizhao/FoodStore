@@ -1,0 +1,22 @@
+<nav class="navbar navbar-inverse bg-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <span class="navbar-brand" >Restaurant</span>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li routerLinkActive="active"><a [routerLink]="['menu']">Menu</a></li>
+              <li routerLinkActive="active"><a [routerLink]="['cart']">Cart</a></li>
+            </ul>
+            <ul class="nav navbar-nav" style="float:right" >
+            <li routerLinkActive="active" *ngIf="!isLoggedIn()"><a [routerLink]="['signup']">Signup</a></li>
+           <li routerLinkActive="active" *ngIf="!isLoggedIn()" ><a [routerLink]="['signin']">Signin</a></li>
+           <li *ngIf="isLoggedIn()">  <span class="navbar-brand" >{{name}}</span></li>
+           <li routerLinkActive="active" *ngIf="isLoggedIn()" ><a [routerLink]="['myorder']">My order</a></li>
+           <li routerLinkActive="active" *ngIf="isLoggedIn()" ><a (click)="logOut()">Logout</a></li>
+             </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+      <div><p> if you want to manage the restaurant you can use ****.com/admin interface</p></div> 
+<router-outlet></router-outlet>
