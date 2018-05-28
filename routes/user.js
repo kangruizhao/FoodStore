@@ -150,7 +150,7 @@ User.findById(req.params.id, function (err, user) {
   //console.log(user.checkList.length);
   var tmplist=[];
   for (var i = 0; i <user.checkList.length; i++) {
-    if(i!==req.body.foodid){
+    if(i!=req.body.foodid){
      tmplist.push(user.checkList[i]);
       }
 }

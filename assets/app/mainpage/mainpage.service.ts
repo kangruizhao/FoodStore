@@ -69,7 +69,7 @@ export class MainPageService {
         });
   }
   deleteGobalFood(food: Food) {
-       food.foodid=this.globalfoods.indexOf(food);
+       food.foodid=String(this.globalfoods.indexOf(food));
        this.globalfoods.splice(this.globalfoods.indexOf(food), 1);
        const body = JSON.stringify(food);
         const headers = new Headers({'Content-Type': 'application/json'});
@@ -109,7 +109,7 @@ export class MainPageService {
        this.getLocalFoods();
        const body =JSON.stringify(this.localfoods);
        this.localfoods=[];
-       localStorage.setItem('foodlist',[]);
+       localStorage.setItem('foodlist',null);
        const headers = new Headers({'Content-Type': 'application/json'});
        return this.http.post('http://localhost:3000/user/addserver/'+userId, body, {headers: headers})
            .map((response: Response) => response.json()).catch((error: Response) => {
@@ -161,7 +161,7 @@ signin(user: User) {
           });
   }
   addtoCartLocal(food:Food){
-    var foodsinlocal = JSON.parse(localStorage.getItem('foodlist');
+    var foodsinlocal = JSON.parse(localStorage.getItem('foodlist'));
     if(foodsinlocal===null){
       foodsinlocal=[];
     }
@@ -192,7 +192,7 @@ signin(user: User) {
   }
   deleteLocalFood(food:Food){
     this.localfoods.splice(this.localfoods.indexOf(food), 1);
-    var foodsinlocal = JSON.parse(localStorage.getItem('foodlist');
+    var foodsinlocal = JSON.parse(localStorage.getItem('foodlist'));
     for(let i of foodsinlocal){
       if(i._id===food.foodid){
         foodsinlocal.splice(foodsinlocal.indexOf(i), 1);
