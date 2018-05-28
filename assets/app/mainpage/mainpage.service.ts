@@ -111,7 +111,7 @@ export class MainPageService {
        this.localfoods=[];
        localStorage.setItem('foodlist',null);
        const headers = new Headers({'Content-Type': 'application/json'});
-       return this.http.post('http://localhost:3000/user/addserver/'+userId, body, {headers: headers})
+       return this.http.post('https://kangruirestaurant.herokuapp.com/user/addserver/'+userId, body, {headers: headers})
            .map((response: Response) => response.json()).catch((error: Response) => {
              //this.errorService.handleError(error.json());
              return Observable.throw(error.json());
@@ -121,7 +121,7 @@ export class MainPageService {
     if(user.cpassword!=user.password)   return Observable.throw({title:"password not match",error:{message:"password not match"}});
     const body = JSON.stringify(user);
     const headers = new Headers({'Content-Type': 'application/json'});
-    return this.http.post('http://localhost:3000/user/signup', body, {headers: headers})
+    return this.http.post('https://kangruirestaurant.herokuapp.com/user/signup', body, {headers: headers})
         .map((response: Response) => response.json())
         .catch((error: Response) => {
           //this.errorService.handleError(error.json());
@@ -131,7 +131,7 @@ export class MainPageService {
 signin(user: User) {
     const body = JSON.stringify(user);
     const headers = new Headers({'Content-Type': 'application/json'});
-    return this.http.post('http://localhost:3000/user/signin', body, {headers: headers})
+    return this.http.post('https://kangruirestaurant.herokuapp.com/user/signin', body, {headers: headers})
         .map((response: Response) => response.json())
         .catch((error: Response) => {
             //this.errorService.handleError(error.json());
@@ -140,7 +140,7 @@ signin(user: User) {
 }
 
   getFoods() {
-      return this.http.get('http://localhost:3000/main/foods')
+      return this.http.get('https://kangruirestaurant.herokuapp.com/main/foods')
           .map((response: Response) => {
               const foods = response.json().obj;
               let transformedFoods: Food[] = [];
