@@ -31,16 +31,20 @@ import { Router } from "@angular/router";
 
       this.mainPageService.signup(user)
           .subscribe(
-              data => console.log(data),
+              data => {
+                console.log(data);
+                this.router.navigateByUrl('/main/signin');
+              },
               error => {
               this.error= new Error(error.title, error.error.message);
+              console.log(error);
               this.display='block';
               }
           );
       //console.log(this.error);
-      if(this.error===undefined){
-        this.router.navigateByUrl('/main/signin');
-      }
+
+
+
   }
       ngOnInit() {
     this.myForm = new FormGroup({
