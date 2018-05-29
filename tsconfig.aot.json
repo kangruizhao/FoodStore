@@ -8,6 +8,7 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": false,
+    "outDir":"./public/js"
   },
   "typeRoots": [
     "node_modules/@types"
