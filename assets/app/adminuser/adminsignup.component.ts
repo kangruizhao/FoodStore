@@ -34,7 +34,7 @@ import { Router } from "@angular/router";
               }
           );
       //console.log(this.error);
-      if(this.error.title===undefined){
+      if(this.error===undefined){
         this.router.navigateByUrl('/adminuser');
       }
   }
