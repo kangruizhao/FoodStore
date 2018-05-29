@@ -37,7 +37,6 @@ import { Router } from "@angular/router";
               },
               error => {
               this.error= new Error(error.title, error.error.message);
-              console.log(error);
               this.display='block';
               }
           );

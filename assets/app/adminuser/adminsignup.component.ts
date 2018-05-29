@@ -27,16 +27,16 @@ import { Router } from "@angular/router";
       );
       this.adminUserService.signup(owner)
           .subscribe(
-              data => console.log(data),
+              data => {console.log(data);
+              this.router.navigateByUrl('/adminuser');}
+              ,
               error => {
               this.error= new Error(error.title, error.error.message);
               this.display='block';
               }
           );
       //console.log(this.error);
-      if(this.error===undefined){
-        this.router.navigateByUrl('/adminuser');
-      }
+    
   }
       ngOnInit() {
     this.myForm = new FormGroup({
