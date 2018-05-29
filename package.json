@@ -2,6 +2,9 @@
   "name": "restaurant",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "npm": "5.7.1"
+  },
   "scripts": {
     "start": "node ./bin/www",
     "build": "del-cli public/js/app && webpack --config webpack.config.dev.js --progress --profile --watch",
